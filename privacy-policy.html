@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CafLog - プライバシーポリシー</title>
+    <title>プライバシーポリシー - CafLog</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-
         * {
             margin: 0;
             padding: 0;
@@ -14,40 +12,100 @@
         }
 
         body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background-color: #fafafa;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
             line-height: 1.8;
+            color: #3c3632;
+            background-color: #faf8f5;
         }
 
         .container {
             max-width: 720px;
             margin: 0 auto;
-            padding: 48px 24px 80px;
+            padding: 40px 24px 80px;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 48px;
-            padding-bottom: 32px;
-            border-bottom: 2px solid #e8e8e8;
-        }
-
-        .app-icon {
-            font-size: 48px;
-            margin-bottom: 12px;
-        }
-
-        h1 {
-            font-size: 24px;
-            font-weight: 700;
-            color: #1a1a1a;
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 8px;
         }
 
-        .subtitle {
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .app-icon {
+            font-size: 32px;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 4px;
+            background: #ece8e3;
+            border-radius: 8px;
+            padding: 2px;
+        }
+
+        .lang-btn {
+            padding: 6px 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            background: transparent;
+            color: #8c7e74;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: #fff;
+            color: #1a1a1a;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 8px;
+            background: #ece8e3;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background: #e0dbd5;
+        }
+
+        .download-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: #8c7e74;
+        }
+
+        .last-updated {
             font-size: 14px;
-            color: #888;
+            color: #9c9088;
+            margin-bottom: 40px;
         }
 
         h2 {
@@ -55,18 +113,17 @@
             font-weight: 700;
             color: #1a1a1a;
             margin-top: 40px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             padding-left: 12px;
-            border-left: 3px solid #f97316;
+            border-left: 3px solid #c8874a;
         }
 
         p {
             margin-bottom: 16px;
             font-size: 15px;
-            color: #444;
         }
 
-        ul {
+        ol, ul {
             margin-bottom: 16px;
             padding-left: 24px;
         }
@@ -74,94 +131,263 @@
         li {
             margin-bottom: 8px;
             font-size: 15px;
-            color: #444;
         }
 
-        .footer {
-            margin-top: 64px;
-            padding-top: 24px;
-            border-top: 1px solid #e8e8e8;
-            text-align: center;
-            font-size: 13px;
-            color: #999;
+        strong {
+            font-weight: 600;
+            color: #2a2420;
         }
 
         a {
-            color: #f97316;
+            color: #c8874a;
             text-decoration: none;
         }
 
         a:hover {
             text-decoration: underline;
         }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid #e8e3dd;
+            font-size: 13px;
+            color: #9c9088;
+            text-align: center;
+        }
+
+        @media print {
+            .header-controls {
+                display: none !important;
+            }
+            body {
+                background: #fff;
+                color: #000;
+            }
+            h1, h2 {
+                color: #000;
+            }
+            .container {
+                padding: 0;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1c1a17;
+                color: #d5cec7;
+            }
+            h1, h2 {
+                color: #f0ebe6;
+            }
+            strong {
+                color: #e8e0d8;
+            }
+            .last-updated, footer {
+                color: #7a7068;
+            }
+            footer {
+                border-top-color: #332e28;
+            }
+            h2 {
+                border-left-color: #d49a5a;
+            }
+            .lang-switcher {
+                background: #332e28;
+            }
+            .lang-btn {
+                color: #8a7e74;
+            }
+            .lang-btn.active {
+                background: #4a4238;
+                color: #f0ebe6;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            }
+            .download-btn {
+                background: #332e28;
+            }
+            .download-btn:hover {
+                background: #4a4238;
+            }
+            .download-btn svg {
+                fill: #8a7e74;
+            }
+            a {
+                color: #d49a5a;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="app-icon">☕</div>
-            <h1>CafLog プライバシーポリシー</h1>
-            <p class="subtitle">最終更新日：2026年3月26日</p>
+        <div class="header-row">
+            <div class="header-title">
+                <span class="app-icon">☕</span>
+                <h1 id="page-title">プライバシーポリシー</h1>
+            </div>
+            <div class="header-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="switchLang('ja')">日本語</button>
+                    <button class="lang-btn" onclick="switchLang('en')">English</button>
+                </div>
+                <button class="download-btn" onclick="downloadPDF()" title="PDF">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v4h4V9h3.67L12 2z" transform="rotate(180 12 12)"/></svg>
+                </button>
+            </div>
         </div>
 
-        <p>本プライバシーポリシーは、CafLog（以下「本アプリ」）における個人情報の取り扱いについて説明するものです。本アプリの利用を開始された時点で、本ポリシーに同意いただいたものとみなします。</p>
+        <!-- 日本語 -->
+        <div id="lang-ja" class="lang-content active">
+            <p class="last-updated">最終更新日: 2026年3月26日</p>
 
-        <h2>1. 収集する情報</h2>
-        <p>本アプリでは、以下の情報を取り扱います。</p>
-        <ul>
-            <li><strong>カフェイン摂取記録：</strong>ユーザーが入力した飲料名、カフェイン量、摂取日時などの記録データ</li>
-            <li><strong>健康・睡眠設定：</strong>就寝時刻、起床時刻、カフェイン半減期などのユーザー設定値</li>
-            <li><strong>アプリ利用データ：</strong>称号の解除状況、統計情報などアプリ内で生成されるデータ</li>
-        </ul>
-        <p>本アプリは、氏名、メールアドレス、電話番号などの個人を特定できる情報を直接収集することはありません。</p>
+            <p>本プライバシーポリシーは、<strong>CafLog</strong>（以下「本アプリ」）における個人情報の取り扱いについて説明するものです。本アプリの利用を開始された時点で、本ポリシーに同意いただいたものとみなします。</p>
 
-        <h2>2. HealthKitデータの利用</h2>
-        <p>本アプリのPro機能では、Apple HealthKitと連携してカフェイン摂取データ（Dietary Caffeine）の読み書きを行います。</p>
-        <ul>
-            <li>HealthKitへのアクセスは、ユーザーが明示的に許可した場合にのみ行われます</li>
-            <li>HealthKitから取得したデータは、アプリ内でのカフェイン管理のみに使用されます</li>
-            <li>HealthKitのデータは、広告、マーケティング、またはデータブローカーへの提供には一切使用されません</li>
-            <li>HealthKitのデータは第三者と共有されることはありません</li>
-        </ul>
+            <h2>1. 収集する情報</h2>
+            <p>本アプリでは、以下の情報を取り扱います。</p>
+            <ul>
+                <li><strong>カフェイン摂取記録：</strong>ユーザーが入力した飲料名、カフェイン量、摂取日時などの記録データ</li>
+                <li><strong>健康・睡眠設定：</strong>就寝時刻、起床時刻、カフェイン半減期などのユーザー設定値</li>
+                <li><strong>アプリ利用データ：</strong>称号の解除状況、統計情報などアプリ内で生成されるデータ</li>
+            </ul>
+            <p>本アプリは、氏名、メールアドレス、電話番号などの個人を特定できる情報を直接収集することはありません。</p>
 
-        <h2>3. データの保存と同期</h2>
-        <p>ユーザーの記録データは、端末内（ローカルストレージ）に保存されます。</p>
-        <ul>
-            <li><strong>ローカル保存：</strong>SwiftDataを使用して端末内のApp Group共有コンテナにデータを保存します</li>
-            <li><strong>iCloud同期（Pro機能）：</strong>ユーザーが有効化した場合、Apple CloudKit Private Databaseを使用してデバイス間でデータを同期します。同期されるデータには、カフェイン摂取記録、ドリンクテンプレート、カフェインゼロ日の記録が含まれます</li>
-        </ul>
-        <p>CloudKitによるデータの取り扱いは、Appleのプライバシーポリシーに準拠します。</p>
+            <h2>2. HealthKitデータの利用</h2>
+            <p>本アプリのPro機能では、Apple HealthKitと連携してカフェイン摂取データ（Dietary Caffeine）の読み書きを行います。</p>
+            <ul>
+                <li>HealthKitへのアクセスは、ユーザーが明示的に許可した場合にのみ行われます</li>
+                <li>HealthKitから取得したデータは、アプリ内でのカフェイン管理のみに使用されます</li>
+                <li>HealthKitのデータは、広告、マーケティング、またはデータブローカーへの提供には一切使用されません</li>
+                <li>HealthKitのデータは第三者と共有されることはありません</li>
+            </ul>
 
-        <h2>4. アプリ内課金</h2>
-        <p>本アプリでは、Apple App Store経由でサブスクリプション（月額・年額）および買い切りプランを提供しています。課金に関する支払い情報はAppleが管理しており、開発者が直接取得することはありません。</p>
+            <h2>3. データの保存と同期</h2>
+            <p>ユーザーの記録データは、端末内（ローカルストレージ）に保存されます。</p>
+            <ul>
+                <li><strong>ローカル保存：</strong>SwiftDataを使用して端末内のApp Group共有コンテナにデータを保存します</li>
+                <li><strong>iCloud同期（Pro機能）：</strong>ユーザーが有効化した場合、Apple CloudKit Private Databaseを使用してデバイス間でデータを同期します。同期されるデータには、カフェイン摂取記録、ドリンクテンプレート、カフェインゼロ日の記録が含まれます</li>
+            </ul>
+            <p>CloudKitによるデータの取り扱いは、Appleのプライバシーポリシーに準拠します。</p>
 
-        <h2>5. 通知</h2>
-        <p>本アプリでは、ユーザーの許可を得た上でローカル通知を送信する場合があります。通知は称号の解除通知やユーザーが設定したスケジュール通知に使用されます。通知の設定はアプリ内からいつでも変更できます。</p>
+            <h2>4. アプリ内課金</h2>
+            <p>本アプリでは、Apple App Store経由でサブスクリプション（月額・年額）および買い切りプランを提供しています。課金に関する支払い情報はAppleが管理しており、開発者が直接取得することはありません。</p>
 
-        <h2>6. 第三者への情報提供</h2>
-        <p>本アプリは、ユーザーの個人情報を第三者に販売、貸与、または共有することはありません。ただし、以下の場合を除きます。</p>
-        <ul>
-            <li>法令に基づく開示要求がある場合</li>
-            <li>ユーザーの同意がある場合</li>
-        </ul>
+            <h2>5. 通知</h2>
+            <p>本アプリでは、ユーザーの許可を得た上でローカル通知を送信する場合があります。通知は称号の解除通知やユーザーが設定したスケジュール通知に使用されます。通知の設定はアプリ内からいつでも変更できます。</p>
 
-        <h2>7. 子どものプライバシー</h2>
-        <p>本アプリは、13歳未満の子どもから意図的に個人情報を収集することはありません。</p>
+            <h2>6. 第三者への情報提供</h2>
+            <p>本アプリは、ユーザーの個人情報を第三者に販売、貸与、または共有することはありません。ただし、以下の場合を除きます。</p>
+            <ul>
+                <li>法令に基づく開示要求がある場合</li>
+                <li>ユーザーの同意がある場合</li>
+            </ul>
 
-        <h2>8. データの削除</h2>
-        <p>ユーザーは、アプリ内のデータをいつでも削除することができます。アプリを端末から削除すると、端末内のデータはすべて消去されます。iCloudに同期されたデータは、iCloudの設定から削除できます。HealthKitに書き込まれたデータは、ヘルスケアアプリから個別に削除できます。</p>
+            <h2>7. 子どものプライバシー</h2>
+            <p>本アプリは、13歳未満の子どもから意図的に個人情報を収集することはありません。</p>
 
-        <h2>9. プライバシーポリシーの変更</h2>
-        <p>本ポリシーは、必要に応じて変更されることがあります。重要な変更がある場合は、アプリ内でお知らせいたします。</p>
+            <h2>8. データの削除</h2>
+            <p>ユーザーは、アプリ内のデータをいつでも削除することができます。アプリを端末から削除すると、端末内のデータはすべて消去されます。iCloudに同期されたデータは、iCloudの設定から削除できます。HealthKitに書き込まれたデータは、ヘルスケアアプリから個別に削除できます。</p>
 
-        <h2>10. お問い合わせ</h2>
-        <p>本ポリシーに関するご質問やお問い合わせは、以下の連絡先までお願いいたします。</p>
-        <p><strong>開発者：</strong>Yuto Uesugi<br>
-        <strong>メール：</strong><a href="mailto:yuto33004.s1@icloud.com">yuto33004.s1@icloud.com</a></p>
+            <h2>9. プライバシーポリシーの変更</h2>
+            <p>本ポリシーは、必要に応じて変更されることがあります。重要な変更がある場合は、アプリ内でお知らせいたします。</p>
 
-        <div class="footer">
-            <p>&copy; 2026 Yuto Uesugi. All rights reserved.</p>
+            <h2>10. お問い合わせ</h2>
+            <p>本ポリシーに関するご質問やお問い合わせは、以下の連絡先までお願いいたします。</p>
+            <p><strong>開発者：</strong>Yuto Uesugi<br>
+            <strong>メール：</strong><a href="mailto:yuto33004.s1@icloud.com">yuto33004.s1@icloud.com</a></p>
         </div>
+
+        <!-- English -->
+        <div id="lang-en" class="lang-content">
+            <p class="last-updated">Last updated: March 26, 2026</p>
+
+            <p>This Privacy Policy describes how <strong>CafLog</strong> ("the App") handles personal information. By using the App, you agree to this policy.</p>
+
+            <h2>1. Information We Collect</h2>
+            <p>The App handles the following information:</p>
+            <ul>
+                <li><strong>Caffeine intake records:</strong> Record data entered by the user, including beverage names, caffeine amounts, and intake dates/times</li>
+                <li><strong>Health &amp; sleep settings:</strong> User settings such as bedtime, wake time, and caffeine half-life</li>
+                <li><strong>App usage data:</strong> Data generated within the App, such as achievement unlock status and statistics</li>
+            </ul>
+            <p>The App does not directly collect personally identifiable information such as names, email addresses, or phone numbers.</p>
+
+            <h2>2. Use of HealthKit Data</h2>
+            <p>The App's Pro features integrate with Apple HealthKit to read and write caffeine intake data (Dietary Caffeine).</p>
+            <ul>
+                <li>HealthKit access occurs only when the user explicitly grants permission</li>
+                <li>Data obtained from HealthKit is used solely for caffeine management within the App</li>
+                <li>HealthKit data is never used for advertising, marketing, or provided to data brokers</li>
+                <li>HealthKit data is never shared with third parties</li>
+            </ul>
+
+            <h2>3. Data Storage and Sync</h2>
+            <p>User records are stored on the device (local storage).</p>
+            <ul>
+                <li><strong>Local storage:</strong> Data is stored in the App Group shared container on the device using SwiftData</li>
+                <li><strong>iCloud sync (Pro feature):</strong> When enabled by the user, data is synced between devices using Apple CloudKit Private Database. Synced data includes caffeine intake records, drink templates, and caffeine-free day records</li>
+            </ul>
+            <p>Data handling through CloudKit complies with Apple's Privacy Policy.</p>
+
+            <h2>4. In-App Purchases</h2>
+            <p>The App offers subscriptions (monthly and annual) and a one-time purchase plan through the Apple App Store. Payment information is managed by Apple and is not directly accessed by the developer.</p>
+
+            <h2>5. Notifications</h2>
+            <p>The App may send local notifications with user permission. Notifications are used for achievement unlocks and user-configured scheduled notifications. Notification settings can be changed at any time within the App.</p>
+
+            <h2>6. Disclosure to Third Parties</h2>
+            <p>The App does not sell, rent, or share users' personal information with third parties, except in the following cases:</p>
+            <ul>
+                <li>When required by law</li>
+                <li>When the user has given consent</li>
+            </ul>
+
+            <h2>7. Children's Privacy</h2>
+            <p>The App does not intentionally collect personal information from children under 13.</p>
+
+            <h2>8. Data Deletion</h2>
+            <p>Users can delete their data within the App at any time. Deleting the App from the device removes all local data. Data synced to iCloud can be deleted through iCloud settings. Data written to HealthKit can be individually deleted through the Health app.</p>
+
+            <h2>9. Changes to This Policy</h2>
+            <p>This policy may be updated as necessary. If significant changes are made, users will be notified within the App.</p>
+
+            <h2>10. Contact</h2>
+            <p>For questions or inquiries regarding this policy, please contact us at:</p>
+            <p><strong>Developer:</strong> Yuto Uesugi<br>
+            <strong>Email:</strong> <a href="mailto:yuto33004.s1@icloud.com">yuto33004.s1@icloud.com</a></p>
+        </div>
+
+        <footer>
+            &copy; 2026 CafLog. All rights reserved.
+        </footer>
     </div>
+
+    <script>
+        function downloadPDF() {
+            var controls = document.querySelector('.header-controls');
+            controls.style.display = 'none';
+            window.print();
+            controls.style.display = '';
+        }
+
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+
+            document.getElementById('lang-' + lang).classList.add('active');
+            document.querySelector('.lang-btn[onclick="switchLang(\'' + lang + '\')"]').classList.add('active');
+
+            document.getElementById('page-title').textContent = lang === 'ja' ? 'プライバシーポリシー' : 'Privacy Policy';
+            document.documentElement.lang = lang;
+            document.title = lang === 'ja' ? 'プライバシーポリシー - CafLog' : 'Privacy Policy - CafLog';
+        }
+    </script>
 </body>
 </html>
