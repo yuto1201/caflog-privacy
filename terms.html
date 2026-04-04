@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用規約 - CafLog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 8px;
+            background: #e8e8e8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background: #d8d8d8;
+        }
+
+        .download-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: #666;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 4px;
+            background: #e8e8e8;
+            border-radius: 8px;
+            padding: 2px;
+        }
+
+        .lang-btn {
+            padding: 6px 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            background: transparent;
+            color: #666;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: #fff;
+            color: #1a1a1a;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .last-updated {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        ol, ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .app-name {
+            font-weight: 600;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 13px;
+            color: #888;
+            text-align: center;
+        }
+
+        @media print {
+            .header-controls {
+                display: none !important;
+            }
+            body {
+                background: #fff;
+                color: #000;
+            }
+            h1, h2, h3 {
+                color: #000;
+            }
+            .container {
+                padding: 0;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #e0e0e0;
+            }
+            h1, h2, h3 {
+                color: #f0f0f0;
+            }
+            .last-updated, footer {
+                color: #777;
+            }
+            h2 {
+                border-bottom-color: #333;
+            }
+            footer {
+                border-top-color: #333;
+            }
+            .lang-switcher {
+                background: #333;
+            }
+            .lang-btn {
+                color: #999;
+            }
+            .lang-btn.active {
+                background: #555;
+                color: #f0f0f0;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            }
+            .download-btn {
+                background: #333;
+            }
+            .download-btn:hover {
+                background: #444;
+            }
+            .download-btn svg {
+                fill: #999;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-row">
+            <h1 id="page-title">利用規約</h1>
+            <div class="header-controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="switchLang('ja')">日本語</button>
+                    <button class="lang-btn" onclick="switchLang('en')">English</button>
+                </div>
+                <button class="download-btn" onclick="downloadPDF()" title="PDF">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v4h4V9h3.67L12 2z" transform="rotate(180 12 12)"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 日本語 -->
+        <div id="lang-ja" class="lang-content active">
+            <p class="last-updated">最終更新日: 2026年4月4日</p>
+
+            <p>この利用規約（以下「本規約」）は、<span class="app-name">CafLog</span>（以下「本アプリ」）の利用に関する条件を定めるものです。本アプリをご利用いただく前に、本規約をよくお読みください。本アプリをダウンロードまたは使用することにより、本規約に同意したものとみなされます。</p>
+
+            <h2>第1条（定義）</h2>
+            <ol>
+                <li>「本アプリ」とは、開発者が提供するiOS向けカフェイン摂取記録アプリケーション「CafLog」をいいます。</li>
+                <li>「ユーザー」とは、本アプリを利用するすべての方をいいます。</li>
+                <li>「開発者」とは、本アプリの開発・運営を行う者をいいます。</li>
+                <li>「Proプラン」とは、本アプリにおける有料サブスクリプションまたは買い切りプランをいいます。</li>
+            </ol>
+
+            <h2>第2条（本アプリの概要）</h2>
+            <p>本アプリは、日々のカフェイン摂取量の記録・管理を目的としたアプリケーションです。薬物動態モデルに基づく体内カフェイン残量の推定、睡眠への影響分析、統計ダッシュボード等の機能を提供します。</p>
+
+            <h2>第3条（利用条件）</h2>
+            <ol>
+                <li>本アプリはiOS 17以降を搭載したAppleデバイスで利用できます。</li>
+                <li>一部の機能を利用するにはインターネット接続が必要です。</li>
+                <li>ユーザーは、自己の責任において本アプリを利用するものとします。</li>
+            </ol>
+
+            <h2>第4条（アカウントおよびデータ）</h2>
+            <ol>
+                <li>本アプリはユーザー登録を必要としません。</li>
+                <li>データはユーザーのデバイス上に保存されます。Proプランをご利用の場合、iCloudを通じてデータが同期されることがあります。</li>
+                <li>データのバックアップおよび管理はユーザー自身の責任で行ってください。</li>
+            </ol>
+
+            <h2>第5条（有料プラン）</h2>
+            <ol>
+                <li>本アプリは無料で基本機能を提供しますが、一部の機能はProプラン（有料）への加入が必要です。</li>
+                <li>Proプランの課金・決済はAppleのApp Store経由で行われ、Appleの利用規約が適用されます。</li>
+                <li>サブスクリプションは、現在の期間終了の24時間前までに解約されない限り、自動的に更新されます。</li>
+                <li>サブスクリプションの管理および解約は、iOSの「設定」>「Apple ID」>「サブスクリプション」から行えます。</li>
+                <li>購入後の返金については、Appleのポリシーに準じます。</li>
+            </ol>
+
+            <h2>第6条（HealthKit連携）</h2>
+            <ol>
+                <li>本アプリは、ユーザーの同意のもと、Apple HealthKitと連携してカフェイン摂取データを読み書きする機能を提供します（Proプラン限定）。</li>
+                <li>HealthKitデータへのアクセスは、ユーザーが明示的に許可した場合にのみ行われます。</li>
+                <li>HealthKitから取得したデータは、本アプリの機能提供の目的にのみ使用し、第三者に提供することはありません。</li>
+            </ol>
+
+            <h2>第7条（医療に関する免責）</h2>
+            <ol>
+                <li>本アプリは医療機器ではなく、医学的な診断・治療・予防を目的としたものではありません。</li>
+                <li>本アプリが提供するカフェイン残量の推定値、睡眠への影響分析等はあくまで参考情報であり、正確性を保証するものではありません。</li>
+                <li>健康上の問題や懸念がある場合は、必ず医師または専門家にご相談ください。</li>
+                <li>本アプリの情報に基づいてユーザーが行った判断や行動について、開発者は一切の責任を負いません。</li>
+            </ol>
+
+            <h2>第8条（知的財産権）</h2>
+            <ol>
+                <li>本アプリに含まれるすべてのコンテンツ（テキスト、グラフィック、アイコン、デザイン等）に関する知的財産権は、開発者または正当な権利者に帰属します。</li>
+                <li>ユーザーは、本アプリのコンテンツを複製、改変、配布、リバースエンジニアリングすることはできません。</li>
+            </ol>
+
+            <h2>第9条（禁止事項）</h2>
+            <p>ユーザーは、以下の行為を行ってはなりません。</p>
+            <ol>
+                <li>本アプリの不正利用または不正アクセス</li>
+                <li>本アプリのリバースエンジニアリング、逆コンパイル、逆アセンブル</li>
+                <li>本アプリの機能を妨害する行為</li>
+                <li>法令または公序良俗に違反する行為</li>
+                <li>その他、開発者が不適切と判断する行為</li>
+            </ol>
+
+            <h2>第10条（免責事項）</h2>
+            <ol>
+                <li>開発者は、本アプリの完全性、正確性、信頼性、有用性について、いかなる保証も行いません。</li>
+                <li>本アプリの利用または利用不能により生じたいかなる損害についても、開発者は責任を負いません。</li>
+                <li>開発者は、本アプリの提供を予告なく中断または終了する場合があります。</li>
+                <li>通信環境やデバイスの状態に起因する不具合について、開発者は責任を負いません。</li>
+            </ol>
+
+            <h2>第11条（プライバシー）</h2>
+            <p>ユーザーの個人情報およびデータの取り扱いについては、別途定めるプライバシーポリシーに従います。</p>
+
+            <h2>第12条（規約の変更）</h2>
+            <ol>
+                <li>開発者は、必要に応じて本規約を変更することがあります。</li>
+                <li>変更後の利用規約は、本アプリ内または開発者のウェブサイトに掲載された時点から効力を生じるものとします。</li>
+                <li>変更後も本アプリを継続して利用する場合、ユーザーは変更後の規約に同意したものとみなされます。</li>
+            </ol>
+
+            <h2>第13条（準拠法・管轄）</h2>
+            <ol>
+                <li>本規約は、日本法に準拠し、解釈されるものとします。</li>
+                <li>本規約に関する紛争については、開発者の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</li>
+            </ol>
+
+            <h2>第14条（お問い合わせ）</h2>
+            <p>本規約に関するお問い合わせは、本アプリ内の設定画面からご連絡ください。</p>
+        </div>
+
+        <!-- English -->
+        <div id="lang-en" class="lang-content">
+            <p class="last-updated">Last updated: April 4, 2026</p>
+
+            <p>These Terms of Service (hereinafter "Terms") set forth the conditions for using <span class="app-name">CafLog</span> (hereinafter "the App"). Please read these Terms carefully before using the App. By downloading or using the App, you agree to be bound by these Terms.</p>
+
+            <h2>Article 1 (Definitions)</h2>
+            <ol>
+                <li>"The App" refers to the iOS caffeine intake tracking application "CafLog" provided by the Developer.</li>
+                <li>"User" refers to any person who uses the App.</li>
+                <li>"Developer" refers to the person or entity that develops and operates the App.</li>
+                <li>"Pro Plan" refers to the paid subscription or one-time purchase plan available within the App.</li>
+            </ol>
+
+            <h2>Article 2 (Overview of the App)</h2>
+            <p>The App is designed to record and manage daily caffeine intake. It provides features including caffeine level estimation based on pharmacokinetic models, sleep impact analysis, and statistical dashboards.</p>
+
+            <h2>Article 3 (Conditions of Use)</h2>
+            <ol>
+                <li>The App is available on Apple devices running iOS 17 or later.</li>
+                <li>An internet connection may be required for certain features.</li>
+                <li>Users shall use the App at their own responsibility.</li>
+            </ol>
+
+            <h2>Article 4 (Accounts and Data)</h2>
+            <ol>
+                <li>The App does not require user registration.</li>
+                <li>Data is stored on the User's device. If using the Pro Plan, data may be synchronized via iCloud.</li>
+                <li>Users are responsible for backing up and managing their own data.</li>
+            </ol>
+
+            <h2>Article 5 (Paid Plans)</h2>
+            <ol>
+                <li>The App provides basic features for free, but certain features require a Pro Plan (paid) subscription.</li>
+                <li>Pro Plan billing and payment are processed through Apple's App Store and are subject to Apple's terms of service.</li>
+                <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period.</li>
+                <li>Subscription management and cancellation can be done through iOS Settings > Apple ID > Subscriptions.</li>
+                <li>Refunds after purchase are subject to Apple's refund policy.</li>
+            </ol>
+
+            <h2>Article 6 (HealthKit Integration)</h2>
+            <ol>
+                <li>The App provides functionality to read and write caffeine intake data through Apple HealthKit with User consent (Pro Plan only).</li>
+                <li>Access to HealthKit data occurs only when explicitly authorized by the User.</li>
+                <li>Data obtained from HealthKit is used solely for providing the App's features and will not be shared with third parties.</li>
+            </ol>
+
+            <h2>Article 7 (Medical Disclaimer)</h2>
+            <ol>
+                <li>The App is not a medical device and is not intended for medical diagnosis, treatment, or prevention.</li>
+                <li>Caffeine level estimates, sleep impact analyses, and other information provided by the App are for reference only and are not guaranteed to be accurate.</li>
+                <li>If you have health concerns, please consult a physician or qualified professional.</li>
+                <li>The Developer assumes no responsibility for any decisions or actions taken by Users based on information provided by the App.</li>
+            </ol>
+
+            <h2>Article 8 (Intellectual Property)</h2>
+            <ol>
+                <li>All intellectual property rights in the content of the App (text, graphics, icons, designs, etc.) belong to the Developer or their rightful owners.</li>
+                <li>Users may not reproduce, modify, distribute, or reverse engineer the App's content.</li>
+            </ol>
+
+            <h2>Article 9 (Prohibited Activities)</h2>
+            <p>Users shall not engage in any of the following activities:</p>
+            <ol>
+                <li>Unauthorized use of or unauthorized access to the App</li>
+                <li>Reverse engineering, decompiling, or disassembling the App</li>
+                <li>Interfering with the functionality of the App</li>
+                <li>Violating any laws or public order and morals</li>
+                <li>Any other activities deemed inappropriate by the Developer</li>
+            </ol>
+
+            <h2>Article 10 (Disclaimer of Warranties)</h2>
+            <ol>
+                <li>The Developer makes no warranties regarding the completeness, accuracy, reliability, or usefulness of the App.</li>
+                <li>The Developer shall not be liable for any damages arising from the use or inability to use the App.</li>
+                <li>The Developer may suspend or terminate the App without prior notice.</li>
+                <li>The Developer is not responsible for issues caused by network conditions or device status.</li>
+            </ol>
+
+            <h2>Article 11 (Privacy)</h2>
+            <p>The handling of Users' personal information and data is governed by a separate Privacy Policy.</p>
+
+            <h2>Article 12 (Changes to Terms)</h2>
+            <ol>
+                <li>The Developer may modify these Terms as necessary.</li>
+                <li>Revised Terms shall take effect upon being posted within the App or on the Developer's website.</li>
+                <li>Continued use of the App after any modification constitutes acceptance of the revised Terms.</li>
+            </ol>
+
+            <h2>Article 13 (Governing Law and Jurisdiction)</h2>
+            <ol>
+                <li>These Terms shall be governed by and construed in accordance with the laws of Japan.</li>
+                <li>Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the court having jurisdiction over the Developer's location as the court of first instance.</li>
+            </ol>
+
+            <h2>Article 14 (Contact)</h2>
+            <p>For inquiries regarding these Terms, please contact us through the Settings screen within the App.</p>
+        </div>
+
+        <footer>
+            &copy; 2026 CafLog. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            var controls = document.querySelector('.header-controls');
+            controls.style.display = 'none';
+            window.print();
+            controls.style.display = '';
+        }
+
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+
+            document.getElementById('lang-' + lang).classList.add('active');
+            document.querySelector('.lang-btn[onclick="switchLang(\'' + lang + '\')"]').classList.add('active');
+
+            document.getElementById('page-title').textContent = lang === 'ja' ? '利用規約' : 'Terms of Service';
+            document.documentElement.lang = lang;
+            document.title = lang === 'ja' ? '利用規約 - CafLog' : 'Terms of Service - CafLog';
+        }
+    </script>
+</body>
+</html>
